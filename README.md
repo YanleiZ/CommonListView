@@ -24,10 +24,10 @@ ListView组件常见的两个问题以及解决方法：
                 bean.setChecked(cb.isChecked());
             }
         });
-        ```
+   ```
 
         
-  -2.先在Bean中添加是否选中的变量，添加get和set方法，在Adapter中添加一个List存储CHeckBox是否选中
+ -2.先在Bean中添加是否选中的变量，添加get和set方法，在Adapter中添加一个List存储CHeckBox是否选中
   
   ```java
    cb.setChecked(false);
@@ -46,6 +46,6 @@ ListView组件常见的两个问题以及解决方法：
                 }
             }
         });
-        ```
+    ```
         
         
