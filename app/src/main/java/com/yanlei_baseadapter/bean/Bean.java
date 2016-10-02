@@ -10,6 +10,17 @@ public class Bean {
     private String time;
     private String phone;
 
+    private boolean isChecked;
+
+    public void setChecked(boolean checked) {
+        isChecked = checked;
+    }
+
+    public boolean isChecked() {
+        return isChecked;
+    }
+
+
     public Bean() {
     }
 

@@ -5,10 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
-
-import com.yanlei_baseadapter.R;
-import com.yanlei_baseadapter.bean.Bean;
 
 import java.util.List;
 
@@ -20,11 +16,13 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
     protected Context mContext;
     protected List<T> mDatas;
     protected LayoutInflater mInflater;
+    private int layoutId;
 
-    public CommonAdapter(Context context, List<T> list) {
+    public CommonAdapter(Context context, List<T> list, int layoutId) {
         this.mContext = context;
         this.mDatas = list;
         mInflater = LayoutInflater.from(context);
+        this.layoutId = layoutId;
     }
 
     @Override
@@ -44,7 +42,7 @@ public abstract class CommonAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder hoder = ViewHolder.get(mContext, convertView, parent, R.layout.item_listview, position);
+        ViewHolder hoder = ViewHolder.get(mContext, convertView, parent, layoutId, position);
         convert(hoder, getItem(position));
         return hoder.getConvertView();
     }
